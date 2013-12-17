@@ -1,0 +1,16 @@
+{% extends "ifiltr/template.html" %}
+
+{% block title %}{{ title }} | iFiltr{% endblock title %}
+
+{% block banner %}
+  {% include "ifiltr/includes/banner.html" %}
+{% endblock banner %}
+
+{% block content %}
+<ul id="results-container" class="large-block-grid-3 small-block-grid-2">
+</ul>
+{% endblock content %}
+
+{% block pageName %}
+  $page = '{{ pagename }}';
+{% endblock pageName %}

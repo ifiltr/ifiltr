@@ -1,0 +1,702 @@
+// Settings
+$highlights: #92c044, #22aadf, #ec3d3c, #FF9900;
+$bg-color: #FAFAFA;
+$std-font-size: 14pt;
+$txtColor: #333;
+$white: #FFF;
+$bodyFontColor: $txtColor;
+$gray: #666;
+// End Settings
+
+// Mixins
+@mixin background-opacity($color, $opacity: 0.5)
+{
+	background: $color;
+	background: rgba($color, $opacity);
+}
+// End Mixins
+
+body
+{
+	background: $bg-color;
+}
+
+div.upper
+{
+}
+
+#banner
+{
+	font-size: 40pt;
+	text-align: center;
+	padding-bottom: 25px;
+}
+
+.search
+{
+	padding: 2px 0 0 0;
+	margin: 0px;
+}
+
+#content
+{
+}
+
+#header
+{
+	text-align: center;
+}
+
+#header a
+{
+	font-size: $std-font-size * 1.3;
+}
+
+div.ads
+{
+}
+
+div.copyright
+{
+	font-size: $std-font-size * .8;
+	padding-top: 12px;
+}
+
+#footer-wrapper
+{
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	position: relative;
+	background-color: $bg-color;
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+
+#footer
+{
+	padding: 10px 0px;
+	text-align: center;
+	font-size: $std-font-size;
+}
+
+#footer a
+{
+	color: $txtColor;
+	font-size: $std-font-size;
+}
+
+#footer a:hover
+{
+	color: $txtColor;
+}
+
+div.divider
+{
+	height: 2px;
+}
+
+div.white-back
+{
+	background-color: white;
+}
+
+.search-buttons
+{
+	width: 100%;
+	height: 46px;
+	background-color: nth($highlights, 4);
+	border-color: darken(nth($highlights, 4), 20%);
+	margin-bottom: 0px;
+	padding: 14px 0px 0px 0px;
+}
+
+.search-buttons:hover
+{
+	background-color: lighten(nth($highlights, 4), 10%);
+}
+
+.button-group li
+{
+	width: 33%;
+	padding: 0px;
+	margin: 0px;
+}
+
+#discover-button
+{
+	background-color: nth($highlights, 2);
+	border-color: darken(nth($highlights, 2), 20%);
+	color: white;
+}
+
+#discover-button:hover
+{
+	background-color: lighten(nth($highlights, 2), 10%);
+}
+
+.arrow
+{
+	border-style: dashed;
+	border-color: transparent;
+	border-width: 0.53em;
+	display: -moz-inline-box;
+	display: inline-block;
+	/* Use font size to adjust arrow size */
+	font-size: 10px;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: middle;
+	width: 0;
+	border-top-width: 1em;
+	border-top-style: solid;
+	border-top-color: white;
+	top: 0.25em;
+}
+
+$num: 1;
+@each $i in $highlights
+{
+	.highlight#{$num}
+	{
+		background-color: $i;
+	}
+	.menu#{$num} a
+	{
+		color: $i;
+	}
+	.font-color-#{$num}
+	{
+		color: $i;
+	}
+	$num: $num + 1;
+}
+
+#searchBanner
+{
+	width: inherit;
+	position: relative;
+	z-index:1;
+}
+
+.header-links
+{
+	padding-bottom: 10px;
+}
+
+.clearfloat
+{
+	width: 100%;
+	clear: both;
+}
+
+.under_construction
+{
+	text-align: center;
+	font-weight:bold;
+	font-size: 18px;
+}
+
+#logo
+{
+	padding: 0px 5px;
+}
+
+#logo a img
+{
+	width: 100%;
+}
+
+.reveal-modal
+{
+	margin-left: 0px;
+	overflow: hidden;
+}
+
+p.vertical-text
+{
+	transform:rotate(-90deg);
+	-moz-transform:rotate(-90deg);
+	-o-transform:rotate(-90deg);
+	-webkit-transform:rotate(-90deg);
+	-ms-transform:rotate(-90deg);
+	width:90px;
+	height:90px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.apply
+{
+	position: relative;
+	padding-top: 0px;
+}
+
+#filterOverlayModal
+{
+	overflow: hidden;
+	height: 0px;
+	padding-top: 35px;
+}
+
+#search-bar
+{
+	padding: 7px 0px 0px 0px;
+}
+
+#categories, #sub-categories, #filters
+{
+	overflow: hidden;
+	background-color: $bg-color;
+	cursor: default;
+}
+
+#sub-categories, #filters
+{
+	border-left: 2px solid nth($highlights, 4);
+}
+
+#categories-box, #sub-categories-box, #filters-box
+{
+	position: relative;
+	width: 1px;
+	left: 20px;
+	overflow-y: scroll;
+}
+
+#category-selector, #sub-category-selector
+{
+	cursor: pointer;
+}
+
+#searchBar { border: 1px solid nth($highlights, 4); }
+::-webkit-input-placeholder { color:nth($highlights, 4); }
+::-moz-placeholder { color:nth($highlights, 4); }
+input:-moz-placeholder { color:nth($highlights, 4); }
+
+$opacityScale: 10;
+@for $i from 0 through $opacityScale
+{
+	.opacity-#{$i}
+	{
+		opacity: $i/$opacityScale;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$i * 100/$opacityScale)";
+		filter: alpha(opacity=$i * 100/$opacityScale);
+		-moz-opacity: $i/$opacityScale;
+		-khtml-opacity: $i/$opacityScale;
+	}
+}
+
+.privacy-header {
+	font-size: 84px;
+	font-family: sans-serif;
+	text-align: center;
+	color: $gray;
+	width: 100%;
+}
+
+.scroll	{
+	width: 100%;
+	height: 100%;
+	padding-top: 20px;
+	margin-bottom: 100px;
+}
+
+.scroll-inner {
+	padding: 40px;
+}
+
+.contact {
+	width: 100%;
+	height: 100%;
+	padding:30px;
+}
+
+.contact a {
+	text-decoration: none;
+}
+
+.support-contact {
+  border-style: solid;
+  border-width: 2px;
+  border-color: gray;
+  border-radius: 10%;
+  text-align: center;
+  margin-top: 70px;
+  color: gray;
+}
+
+.advertising-contact {
+  border-style: solid;
+  border-width: 2px;
+  border-color: gray;
+  border-radius: 10%;
+  text-align: center;
+  margin-top: 70px;
+  color: gray;
+}
+
+.partnership-contact {
+  border-style: solid;
+  border-width: 2px;
+  border-color: gray;
+  border-radius: 10%;
+  text-align: center;
+  margin-top: 70px;
+  color: gray;
+}
+
+.investors-contact{
+  border-style: solid;
+  border-width: 2px;
+  border-color: gray;
+  border-radius: 10%;
+  text-align: center;
+  margin-top: 70px;
+  color: gray;
+}
+
+.support-contact:hover {
+	border-color: #92c044;
+	color: #92c044;
+}
+
+.advertising-contact:hover {
+	border-color: #22aadf;
+	color: #22aadf;
+}
+
+.partnership-contact:hover {
+	border-color: #ec3d3c;
+	color: #ec3d3c;
+}
+
+.investors-contact:hover {
+	border-color: #FF9900;
+	color: #FF9900;
+}
+
+.support-contact-select {
+	border-color: #92c044;
+	color: #92c044;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.advertising-contact-select {
+	border-color: #22aadf;
+	color: #22aadf;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.partnership-contact-select {
+	border-color: #ec3d3c;
+	color: #ec3d3c;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.investors-contact-select {
+	border-color: #FF9900;
+	color: #FF9900;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.support-contact-noselect {
+	border-color: gray;
+	color: gray;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.advertising-contact-noselect {
+	border-color: gray;
+	color: gray;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.partnership-contact-noselect {
+	border-color: gray;
+	color: gray;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.investors-contact-noselect {
+	border-color: gray;
+	color: gray;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.support-contact-noselect:hover {
+	border-color: #92c044;
+	color: #92c044;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.advertising-contact-noselect:hover {
+	border-color: #22aadf;
+	color: #22aadf;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.partnership-contact-noselect:hover {
+	border-color: #ec3d3c;
+	color: #ec3d3c;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.investors-contact-noselect:hover {
+	border-color: #FF9900;
+	color: #FF9900;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.form-container {
+	margin-left: auto;
+	margin-right: auto;
+	border-style: solid;
+	border-color: gray;
+	border-width: 3px;
+	height: 325px;
+	margin-top: 30px;
+	text-align: center;
+}
+
+#about
+{
+	margin: 0px;
+}
+
+.about-name
+{
+	height: 50px;
+	font-size: 23px;
+}
+
+.about-title
+{
+	display: none;
+	font-size: 18px;
+}
+
+.about-name, .about-title
+{
+	width: 100%;
+	position: relative;
+	padding: 5px;
+	text-align: center;
+	color: $txtColor;
+	margin: 0px;
+}
+
+.about-title, .about-name
+{
+	@include background-opacity($bg-color, 0.8);
+}
+
+.about-item
+{
+	cursor: pointer;
+	min-height: 200px;
+	width: 100%;
+	height: 100%;
+	margin: 10px 0px;
+}
+
+.about-item:hover > .about-title
+{
+	display: block;
+}
+
+.results-overlay
+{
+	background-color: white;
+	position: relative;
+	z-index: 10;
+	color: $txtColor;
+	text-align: center;
+	display: none;
+	overflow: hidden;
+	width: 100%;
+	@include background-opacity(white, 0.8);
+}
+
+.results-overlay h5, .results-overlay h6, .results-overlay div
+{
+	@extend .opacity-9;
+	background: transparent;
+}
+
+.results-item
+{
+	padding: 5px 0px;
+	display: -moz-box;
+	-moz-box-pack: center;
+	-moz-box-align: center;
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	display: box;
+	box-pack: center;
+	box-align: center;
+	text-align: center;
+}
+
+.results-item:hover > a .results-overlay
+{
+	display: block;
+}
+
+.results-image
+{
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	margin: auto;
+}
+
+.results-border
+{
+	border-style: solid;
+	border-width: 2px;
+}
+
+#results-container
+{
+	margin: 0px;
+	width: 100%;
+}
+
+.signup {
+	width: 18.5%;
+	float: right;
+	margin-right: 13.5%;
+	height: 300px;
+	top:0px;
+	position: relative;
+	border-style: solid;
+	border-width: 1px;
+	border-color: gray;
+	z-index:2;
+}
+
+.support-formatting {
+	border-style:solid;
+	border-width: 2px;
+	border-color: gray;
+	border-radius: 10%;
+	text-align: center;
+}
+
+.support-formatting-form {
+	text-align: center;
+}
+
+.learn-ifiltr {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.results-image-wrapper
+{
+	height: 100%;
+	width: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+.menu-item
+{
+	cursor: pointer;
+}
+
+#signin-button
+{
+	z-index: 100;
+}
+
+#loginOverlayModal
+{
+	display: none;
+	width: 440px;
+	padding: 20px;
+	background-color: $bg-color;
+	left: -75%;
+}
+
+#signin-button:hover > #loginOverlayModal
+{
+	display: block;
+	z-index: 1;
+	position: absolute;
+	-moz-box-shadow: 0 0 5px black;
+	-webkit-box-shadow: 0 0 5px black;
+	box-shadow: -2px 4px 6px black;
+}
+
+#signin-button:hover
+{
+	background-color: $bg-color;
+	-moz-box-shadow: 0 0 5px black;
+	-webkit-box-shadow: 0 0 5px black;
+	box-shadow: -2px 0px 6px black;
+}
+
+.menu1, .menu2, .menu3, .menu4
+{
+	padding-top: 15px;
+	padding-bottom: 5px;
+}
+
+#sub-header
+{
+	margin-top: 10px;
+}

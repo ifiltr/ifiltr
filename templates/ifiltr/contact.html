@@ -1,0 +1,71 @@
+{% extends "ifiltr/template.html" %}
+
+{% block title %}Contact | iFiltr{% endblock title %}
+
+{% block banner %}
+	{% include "ifiltr/includes/banner.html" %}
+{% endblock banner %}
+
+{% block content %}
+
+<div id="contact" style="display: block">
+	<div class="row">
+		<ul class="small-block-grid-2 large-block-grid-4">
+			<li onclick="javascript:support()" class="support-formatting support-contact">Support</li>
+			<li onclick="javascript:advertising()" class="support-formatting advertising-contact">Advertising</li>
+			<li onclick="javascript:partnerships()" class="support-formatting partnership-contact">Partnerships</li>
+			<li onclick="javascript:investors()" class="support-formatting investors-contact">Investors</li>
+		</ul>
+	</div>
+</div>
+<div id="contactadv" style="display: none">
+	<div class="row">
+		<ul class="small-block-grid-2 large-block-grid-4">
+			<li onclick="javascript:support()" class="support-formatting-form support-contact-noselect">Support</li>
+			<li onclick="javascript:advertising()" class="support-formatting-form advertising-contact-select">Advertising</li>
+			<li onclick="javascript:partnerships()" class="support-formatting-form partnership-contact-noselect">Partnerships</li>
+			<li onclick="javascript:investors()" class="support-formatting-form investors-contact-noselect">Investors<li>
+		</ul>
+	</div>
+	<div class="form-container small-9 small-centered columns">Advertising Contact Form</div>
+</div>
+<div id="contactpartn" style="display: none">
+	<div class="row">
+		<ul class="small-block-grid-2 large-block-grid-4">
+			<li onclick="javascript:support()" class="support-formatting-form support-contact-noselect">Support</li>
+			<li onclick="javascript:advertising()" class="support-formatting-form advertising-contact-noselect">Advertising</li>
+			<li onclick="javascript:partnerships()" class="support-formatting-form partnership-contact-select">Partnerships</li>
+			<li onclick="javascript:investors()" class="support-formatting-form investors-contact-noselect">Investors<li>
+		</ul>
+	</div>
+	<div class="form-container small-9 small-centered columns">Partnerships Contact Form</div>
+</div>
+<div id="contactsupp" style="display: none">
+	<div class="row">
+		<ul class="small-block-grid-2 large-block-grid-4">
+			<li onclick="javascript:support()" class="support-formatting-form support-contact-select">Support</li>
+			<li onclick="javascript:advertising()" class="support-formatting-form advertising-contact-noselect">Advertising</li>
+			<li onclick="javascript:partnerships()" class="support-formatting-form partnership-contact-noselect">Partnerships</li>
+			<li onclick="javascript:investors()" class="support-formatting-form investors-contact-noselect">Investors<li>
+		</ul>
+	</div>
+	<div class="form-container small-9 small-centered columns">Support Contact Form</div>
+</div>
+<div id="contactinv" style="display: none">
+	<div class="row">
+		<ul class="small-block-grid-2 large-block-grid-4">
+			<li onclick="javascript:support()" class="support-formatting-form support-contact-noselect">Support</li>
+			<li onclick="javascript:advertising()" class="support-formatting-form advertising-contact-noselect">Advertising</li>
+			<li onclick="javascript:partnerships()" class="support-formatting-form partnership-contact-noselect">Partnerships</li>
+			<li onclick="javascript:investors()" class="investors-contact-select support-formatting-form">Investors<li>
+		</ul>
+	</div>
+	<div class="row">
+		<div class="form-container small-9 small-centered columns">Investors Contact Form</div>
+	</div>
+</div>
+{% endblock content %}
+
+{% block pageName %}
+	$page = 'home';
+{% endblock pageName %} 

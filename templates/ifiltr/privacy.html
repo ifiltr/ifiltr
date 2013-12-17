@@ -1,0 +1,23 @@
+{% extends "ifiltr/template.html" %}
+
+{% block title %}Privacy | iFiltr{% endblock title %}
+
+{% block banner %}
+	<div id="banner" class="row">
+		<a href="{% url home %}"><img src="{{ STATIC_URL }}images/logos/original/logo-small.png" /></a>
+	</div>
+	<div class="row"><div class="privacy-header small-12 columns">
+		<span class="font-color-1">W</span>e <span class="font-color-2">C</span>are <span class="font-color-3">A</span>bout<br /><span class="font-color-4">P</span>rivacy
+	</div></div>
+{% endblock banner %}
+
+{% block content %}
+<hr />
+	<div class="small-12 columns scroll">
+	<p style="font-weight:bold; font-size:24px;">Under Construction</p>
+</div>
+{% endblock content %}
+
+{% block pageName %}
+	$page = 'privacy';
+{% endblock pageName %} 

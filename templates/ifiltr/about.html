@@ -1,0 +1,19 @@
+{% extends "ifiltr/template.html" %}
+
+{% block title %}About | iFiltr{% endblock title %}
+
+{% block banner %}
+	{% include "ifiltr/includes/banner.html" %}
+{% endblock banner %}
+
+{% block content %}
+<ul id="about" class="small-block-grid-2 large-block-grid-4 small-12 columns">
+	<li class="results-image-wrapper about-item" style="background-image: url('{{ STATIC_URL }}images/NathanImage.jpg');"><p class="about-name">Nathan Bernard</p><p class="about-title">Founder<br />Chairman & CEO</p></li>
+	<li class="results-image-wrapper about-item" style="background-image: url('{{ STATIC_URL }}images/ThiagoPagonha.png');"><p class="about-name">Thiago Pagonha</p><p class="about-title">CTO</p></li>
+	<li class="results-image-wrapper about-item" style="background-image: url('{{ STATIC_URL }}images/AustinImage.jpg');"><p class="about-name">Austin Murdock</p><p class="about-title">Co-Founder<br />VP of Engineering</p></li>
+</ul>
+{% endblock content %}
+
+{% block pageName %}
+	$page = 'home';
+{% endblock pageName %} 

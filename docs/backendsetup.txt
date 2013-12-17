@@ -1,0 +1,38 @@
+This tutorial will help you install git, python, django, and everything needed
+to develop for the iFiltr backend. This will not install the nifty tools that
+are needed for CSS development.
+
+Assume that all installations you should choose default settings unless otherwise specified.
+
+1.) Install python 2.7. This can be found at http://python.org/ftp/python/2.7.3/python-2.7.3.msi
+    -make sure that you install the 32 bit version to c:\python27\
+2.) Install easy_install from https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11.win32-py2.7.exe
+3.) Install the github client from http://github-windows.s3.amazonaws.com/GitHubSetup.exe
+4.) Go to github.com and create an account. After, request access to the ifiltr-backend repo.
+5.) Open up the github client(type github into start) and clone the iFiltr-backend repository to
+    your harddrive
+6.) open up a cmd window and run the following command
+    setx path "%pPATH%;C:\Python27\;C:\Python27\Scripts\"
+    *if you used a different installation path for python make sure you replace that from the command above
+7.) restart the terminal window
+8.) figure out the directory that the github client was cloned to
+    -a sample one is "c:\Users\Me\Documents\GitHub\iFiltr-backend"
+    -you directory may be something similar to the above directory
+9.) from a cmd window run "cd pathtoifiltr" where pathtoifiltr is the path you just found
+10.) run "easy_install pip"
+11.) run "pip install -r requirements.txt"
+12.) run "python populateDb.py"
+13.) run "python manage.py syncdb" say no to creating a superuser
+14.) run "python manage.py runserver"
+15.) if everything went as planned you should be able to go to 127.0.0.1:8000 in an internet browser
+ and see the local ifiltr site. Any local changes will get automatically reflected in the local site
+
+Next Steps:
+1.) If you are unfamiliar with python you should learn it. 
+    http://www.codecademy.com/tracks/python is a fantastic place to start
+2.) If you are unfamiliar with django https://docs.djangoproject.com/en/1.5/intro/tutorial01/
+ is a fantastic tutorial and will take you through a lot of things you'll need to know
+ to develop for ifiltr
+3.) This one is not as necessary for backend development but learning a bit of javascript
+ is not a bad idea. It'll actually be really useful especially for learning the request/response
+ pattern that is used anywhere on the web. I found http://eloquentjavascript.net/ to be awesome.

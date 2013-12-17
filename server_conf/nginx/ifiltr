@@ -1,0 +1,50 @@
+    upstream app_server {
+        server unix:/tmp/gunicorn.sock fail_timeout=0;
+        # For a TCP configuration:
+        # server 192.168.0.7:8000 fail_timeout=0;
+    }
+
+    server {
+        listen 80;
+        listen [::]:80;
+        server_name ifiltr.com;
+
+        return 301 https://$server_name$request_uri;
+    }
+
+    server {
+        listen 443 ssl default;
+        client_max_body_size 4G;
+        server_name ifiltr.com;
+
+        ssl_certificate /etc/ssl/certs/ssl-bundle.crt;
+        ssl_certificate_key /etc/ssl/private/ifiltr.com.key;
+        ssl_protocols SSLv3 TLSv1;
+        ssl_ciphers ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM;
+
+        keepalive_timeout 5;
+
+        access_log /var/webapps/iFiltr-server/logs/nginx-access.log;
+        error_log /var/webapps/iFiltr-server/logs/nginx-error.log;
+
+        # path for static files
+        root /var/webapps/iFiltr-server/ifiltr_site/static/;
+
+        location / {
+            # checks for static file, if not found proxy to app
+            try_files $uri @proxy_to_app;
+        }
+
+        location @proxy_to_app {
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $http_host;
+            proxy_redirect off;
+
+            proxy_pass   http://app_server;
+        }
+
+        error_page 500 502 503 504 /500.html;
+        location = /500.html {
+            root /var/webapps/iFiltr-server/ifiltr_site/static/;
+        }
+    }

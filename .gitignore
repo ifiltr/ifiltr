@@ -1,0 +1,8 @@
+*.log
+*.pot
+*.pyc
+*sqlite*
+*cache*
+*.sass-cache*
+venv
+settings.py

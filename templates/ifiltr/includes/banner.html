@@ -1,0 +1,9 @@
+<div class="large-3 small-8 small-offset-2 large-offset-0 columns" id="logo">
+	<a href="{% url home %}"><img src="{{ STATIC_URL }}images/logos/original/logo-small.png"/></a>
+</div>
+<div id="search-bar" class="large-7 small-8 columns search">
+	{% include "ifiltr/includes/search_bar.html" %}
+</div>
+<div class="large-2 small-4 columns">
+	{% include "ifiltr/includes/search_button.html" %}
+</div>

@@ -1,0 +1,20 @@
+Usage: Compass is used to compile .sass files into .css files which can then be used by the site.
+
+Installing compass on windows
+1.) Install ruby, download and run the rubyinstaller from the ruby website (http://rubyinstaller.org/downloads/)
+2.) Open command prompt.
+3.) Change directory (cd) to the folder of your git repo mine is (~/"My Documents"/GitHub/iFiltr-backend/)
+4.) Run the command:
+  gem install zurb-foundation
+5.) When completed, run the command:
+  gem update zurb-foundation
+6.) Upon completion, run:
+  gem install compass
+7.) Compass is now installed!
+
+Using compass
+1.) Once compass is installed navigate to the ifiltr_site directory (~/"My Documents"/GitHub/iFiltr-backend/ifiltr_site/)
+2.) Run the command:
+  compass watch
+3.) Now make any changes you want to the files located in the sass directory and updates will be automatically compiled upon save into the css files located in the static folder.
+Note: Do not upload (add) the .sass-cache folder to github, this is a temporary folder required by sass for compiling and can be deleted (if you so desire) when compass is closed.

@@ -1,0 +1,35 @@
+<div id="filterOverlayModal" class="reveal-modal">
+	<div class="row" style="margin-bottom: 0px;">
+		<div class="small-12 columns end" id="categories">
+			<p class="vertical-text">Categories</p>
+			<form id="categories-form">
+				<select name="category" size="3" id="categories-box" onChange="saveFilter('categories'); toTop('sub-categories');">
+				</select>
+			</form>
+			<div class="apply">Select a Category.</div>
+		</div>
+	</div>
+	<div class="row" style="margin-bottom: 0px;">
+		<div id="category-selector" class="small-1 columns" onClick="toTop('categories');">
+		</div>
+		<div class="small-11 columns"  id="sub-categories">
+			<p class="vertical-text">Sub-Categories</p>
+			<form id="sub-categories-form">
+				<select name="sub-category" size="3" id="sub-categories-box" onChange="saveFilter('sub-categories'); toTop('filters');">
+				</select>
+			</form>
+			<div class="apply">Select a Sub-Category.</div>
+		</div>
+	</div>
+	<div class="row" style="margin-bottom: 0px;">
+		<div id="sub-category-selector" class="small-1 small-offset-1 columns" onClick="saveFilter('filters'); toTop('sub-categories');">
+		</div>
+		<div id="filters" class="small-10 columns">
+			<p class="vertical-text">Filters</p>
+			<form id="filters-box">
+			</form>
+			<div class="apply">Select Filters then press &quot;Apply&quot;.</div>
+		</div>
+	</div>
+	<div id="applyFilters" onClick="toggleFilters();"><a class="close-reveal-modal">Apply</a></div>
+</div>

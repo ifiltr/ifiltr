@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]> <html class="no-js" lang="en"> <![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/normalize.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/app.css">
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="/stylesheets/ie.css">
+	<![endif]-->
+	<!-- End CSS Files -->
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" type="image/x-icon" />
+	
+	<!-- Author -->
+	<link type="text/plain" rel="author" href="/humans.txt" />
+
+	<!-- Required preloaded JS -->
+	<script src="{{ STATIC_URL }}javascripts/vendor/jquery.js"></script>
+	<script src="{{ STATIC_URL }}javascripts/vendor/custom.modernizr.js"></script>
+	<script src="{{ STATIC_URL }}javascripts/foundation/foundation.js"></script>
+	<script src="{{ STATIC_URL }}javascripts/vendor/zepto.js"></script>
+	<script src="{{ STATIC_URL }}javascripts/foundation/foundation.placeholder.js"></script>
+	<script src="{{ STATIC_URL }}javascripts/foundation/foundation.reveal.js"></script>
+	<script src="{{ STATIC_URL }}javascripts/foundation/foundation.forms.js"></script>
+	<script src="{{ STATIC_URL }}javascripts/foundation/foundation.dropdown.js"></script>
+	<script type="text/javascript">
+		//Initializes required variables.
+		{% block pageName %}
+		if(typeof $page == 'undefined')
+			{$page = '';}
+		{% endblock pageName %}
+	</script>
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!-- End JS -->
+	
+	<title>{% block title %}iFiltr{% endblock title %}</title>
+</head>
+<body>
+{% autoescape off %}
+<!-- Header -->
+	<div id="header">
+		{% block header %}
+		<div class="row header-links">
+			<div class="large-3 small-12 columns menu1">
+				<a href="{% url about %}">About</a>
+			</div>
+			<div class="large-3 small-12 columns menu2">
+				<a href="{% url under_construction %}">Forums</a>
+			</div>
+			<div class="large-3 small-12 columns menu3">
+				<a href="{% url under_construction %}">Blogs</a>
+			</div>
+			<div class="large-3 small-12 columns menu4 menu-item" id="signin-button">
+				<a>Sign In</a>
+				<!-- Start Login Overlay Modal -->
+					{% include "ifiltr/includes/loginpage.html" %}
+				<!-- End Login Overlay Modal -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-3 small-12 columns highlight1  divider"></div>
+			<div class="large-3 small-12 columns highlight2  divider"></div>
+			<div class="large-3 small-12 columns highlight3  divider"></div>
+			<div class="large-3 small-12 columns highlight4  divider"></div>
+		</div>
+		{% endblock header %}
+	</div>
+<!-- End Header -->
+<!-- Content -->
+	<div id="sub-header" class="row">
+		{% block banner %}
+		{% endblock banner %}
+	</div>
+	<div id="content" class="row">
+		{% block content %}
+		<div id="searchBanner">
+			<div class="row">
+				<div id="banner">
+				<a href="{% url home %}"><img src="{{ STATIC_URL }}images/logos/original/logo-med.png" /></a>
+				</div>
+			</div>
+			<div class="row">
+				<div id="search-bar" class="large-7 small-9 columns large-offset-2 search">
+					{% include "ifiltr/includes/search_bar.html" %}
+				</div>
+				<div class="large-2 small-3 columns end">
+					{% include "ifiltr/includes/search_button.html" %}
+				</div>
+			</div>
+		</div>
+		<!--<div class="row">
+			<div class="small-centered small-12 learn-ifiltr columns">
+				<p>To learn how to use iFiltr <a href="{% url about %}">click here</a>.
+			</div>
+			{% include "ifiltr/includes/loginpage.html" %}
+		</div>-->
+		{% endblock content %}
+	</div>
+<!-- End Content -->
+<!-- Footer -->
+	<div id="footer-wrapper">
+		{% block footer %}
+		<div class="row">
+			<div class="opacity-6">
+				<div class="small-3 columns highlight1 divider"></div>
+				<div class="small-3 columns highlight2 divider"></div>
+				<div class="small-3 columns highlight3 divider"></div>
+				<div class="small-3 columns highlight4 divider"></div>
+			</div>
+			<div class="opacity-6">
+				<div class="small-3 columns highlight1 divider"></div>
+				<div class="small-3 columns highlight2 divider"></div>
+				<div class="small-3 columns highlight3 divider"></div>
+				<div class="small-3 columns highlight4 divider"></div>
+			</div>
+			<div id="footer">
+				<div class="large-2 large-offset-1 small-6 columns">
+					<a href="{% url under_construction %}">News</a>
+				</div>
+				<div class="large-2 small-6 columns">
+					<a href="{% url under_construction %}">Advertising</a>
+				</div>
+				<div class="large-2 small-6 columns">
+					<a href="{% url under_construction %}">Partners</a>
+				</div>
+				<div class="large-2 small-6 columns">
+					<a href="{% url privacy %}">Privacy</a>
+				</div>
+				<div class="large-2 small-12 columns end">
+					<a href="{% url contact %}">Contact</a>
+				</div>
+				<div class="clearfloat"></div>
+				<div class="copyright small-12 columns">
+				</div>
+			</div>
+		</div>
+		{% endblock footer %}
+	</div>
+<!-- End Footer -->
+	{% endautoescape %}
+
+<!-- Start Filter Overlay Modal -->
+	{% include "ifiltr/includes/filter_overlay.html" %}
+<!-- End Filter Overlay Modal -->
+
+	<script src="{{ STATIC_URL }}javascripts/formatting.js"></script>
+	<script src="{{ STATIC_URL }}javascripts/filters.js"></script>
+	<script src="{{ STATIC_URL }}javascripts/events.js"></script>
+	<script src="{{ STATIC_URL }}javascripts/search.js"></script>
+</body>
+</html>

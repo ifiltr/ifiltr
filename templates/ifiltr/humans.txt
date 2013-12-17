@@ -1,0 +1,13 @@
+# Team
+        Nathan Bernard -- CEO -- Content
+        Thiago Pagonha -- CTO -- All around IT Specialist ;)
+        Austin Murdock -- VPEng -- User Interface, Client-Server Integration, Layout
+
+# Thanks
+        zurb-foundation -- foundation.zurb.com
+
+# Technology
+        HTML5, CSS3
+        Foundation 4, Modernizr, jQuery, Normalize.css, Python, Django
+        Brackets, Notepad++, GIMP
+
