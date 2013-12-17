@@ -80,3 +80,6 @@ Twitter: `@InfinityFiltr`
 Email: `nbernard[at]openfaux.org`
 
 ## License
+
+##### iFiltr is released under the [GNU Affero General Public License (AGPL3)](https://www.gnu.org/licenses/agpl-3.0.html).
+The full license text is included in `LICENSE.txt`.
