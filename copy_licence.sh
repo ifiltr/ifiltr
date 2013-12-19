@@ -1,4 +1,4 @@
-find . -name "*.py" -exec sed -i "1i \"\"\"\n\
+find . -name "*.py" -follow -type f -print0 | xargs -0 grep -L 'Copyright (C) 2012-2013 iFiltr' | xargs sed -i "1i \"\"\"\n\
     iFiltr, Simple & Secure Social Shopping.\n\
     Copyright (C) 2012-2013 iFiltr (<https://ifiltr.com>).\n\
 \n\
@@ -15,4 +15,3 @@ find . -name "*.py" -exec sed -i "1i \"\"\"\n\
     You should have received a copy of the GNU Affero General Public License\n\
     along with this program. If not, see <http://www.gnu.org/licenses/>.\n\
 \"\"\"" {} \;
-
