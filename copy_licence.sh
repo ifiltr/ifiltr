@@ -34,7 +34,7 @@ find . -name "*.html" -follow -type f -print0 | xargs -0 grep -L 'Copyright (C) 
     along with this program. If not, see <http://www.gnu.org/licenses/>.\n\
 -->"
 
-find . -name "*.scss" -or -name "*.js" -or -name "*.css" -follow -type f -print0 | xargs -0 grep -L 'Copyright (C) 2012-2013 iFiltr' | xargs sed -i "1i /**\n\
+find . -name "*.scss" -or -name "*.js" -or -name "*.css" -follow -type f | xargs grep -L 'Copyright (C) 2012-2013 iFiltr' | xargs sed -i "1i /**\n\
     iFiltr, Simple & Secure Social Shopping.\n\
     Copyright (C) 2012-2013 iFiltr (<https://ifiltr.com>).\n\
 \n\
