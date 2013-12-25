@@ -1,4 +1,4 @@
-![iFiltr](https://raw.github.com/ifiltr/ifiltr/master/ifiltr_site/static/images/logos/original/logo-large.png?token=5732914__eyJzY29wZSI6IlJhd0Jsb2I6aWZpbHRyL2lmaWx0ci9tYXN0ZXIvaWZpbHRyX3NpdGUvc3RhdGljL2ltYWdlcy9sb2dvcy9vcmlnaW5hbC9sb2dvLWxhcmdlLnBuZyIsImV4cGlyZXMiOjEzODc5MTI0MzF9--59f5c1bbb3976228c2241711b4fdf00cdd35d5a5)
+![iFiltr](https://raw.github.com/ifiltr/ifiltr/master/ifiltr_site/static/images/logos/original/logo-large.png)
 
 ## Simple & Secure Social Shopping.
 
